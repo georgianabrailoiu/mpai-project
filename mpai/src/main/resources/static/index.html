@@ -1,10 +1,53 @@
 <!DOCTYPE HTML>
 <html>
 <head> 
-    <title>Getting Started: Serving Web Content</title> 
+    <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/creareCont.css">
 </head>
 <body>
-    <p>Get your greeting <a href="/greeting">here</a></p>
+<!--<p>Get your greeting <a href="/greeting">here</a></p>-->
+<div class="login">
+    <h1>Creare cont</h1>
+    <form method="post">
+        <input type="text" name="u" placeholder="Username" required="required" />
+        <input type="password" name="p" placeholder="Password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+    </form>
+</div>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+
+<div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="/pictures/img_avatar.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>
+<script src="/js/login.js"></script>
 </body>
 </html>
