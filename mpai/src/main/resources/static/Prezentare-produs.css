@@ -39,25 +39,20 @@
 
 .u-section-1 .u-carousel-control-1 {
   position: absolute;
-  left: 110px;
+  left: 100px;
   width: 40px;
   height: 40px;
-  background-image: none;
 }
 
 .u-section-1 .u-carousel-control-2 {
   position: absolute;
+  right: 0;
   width: 40px;
   height: 40px;
-  background-image: none;
-  left: auto;
-  right: 0;
 }
 
 .u-section-1 .u-carousel-thumbnails-1 {
-  padding-right: 10px;
-  padding-top: 0;
-  padding-left: 0;
+  padding-right: 0;
 }
 
 .u-section-1 .u-text-1 {
