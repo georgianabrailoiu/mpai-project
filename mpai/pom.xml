@@ -19,10 +19,6 @@
     </properties>
 
     <dependencies>
-        <!--		&lt;!&ndash;<dependency>-->
-        <!--			<groupId>org.springframework.boot</groupId>-->
-        <!--			<artifactId>spring-boot-starter-jdbc</artifactId>-->
-        <!--		</dependency>&ndash;&gt;-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
