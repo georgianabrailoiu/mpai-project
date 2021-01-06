@@ -18,4 +18,9 @@ public class UtilizatorServiceImpl implements UtilizatorService {
     public List<Utilizator> findAll() {
         return utilizatorRepository.findAll();
     }
+
+    @Override
+    public Utilizator addUtilizator(Utilizator utilizator) {
+        return utilizatorRepository.save(utilizator);
+    }
 }

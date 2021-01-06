@@ -12,6 +12,51 @@ public class Utilizator {
     private String nume;
     private String email;
     private String parola;
+    private String nrTel;
+    private String adresa;
+    private String codPostal;
+    private Integer varsta;
+    private String stareCivila;
+
+    public String getNrTel() {
+        return nrTel;
+    }
+
+    public void setNrTel(String nrTel) {
+        this.nrTel = nrTel;
+    }
+
+    public String getAdresa() {
+        return adresa;
+    }
+
+    public void setAdresa(String adresa) {
+        this.adresa = adresa;
+    }
+
+    public String getCodPostal() {
+        return codPostal;
+    }
+
+    public void setCodPostal(String codPostal) {
+        this.codPostal = codPostal;
+    }
+
+    public Integer getVarsta() {
+        return varsta;
+    }
+
+    public void setVarsta(Integer varsta) {
+        this.varsta = varsta;
+    }
+
+    public String getStareCivila() {
+        return stareCivila;
+    }
+
+    public void setStareCivila(String stareCivila) {
+        this.stareCivila = stareCivila;
+    }
 
     public Long getId() {
         return id;
