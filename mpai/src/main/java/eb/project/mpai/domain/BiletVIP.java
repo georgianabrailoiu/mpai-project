@@ -13,13 +13,13 @@ public class BiletVIP extends AbstractFactory {
     private int nrLoc;
 
     @Override
-    Eveniment getItem(Tip collection, String numeEveniment, String data, int capacitate, String locatie) {
+    Eveniment getItem(Tip collection) {
         if(collection.equals(Tip.Teatru))
-            return new BiletVIPTeatru(numeEveniment, data, capacitate, locatie);
+            return new BiletVIPTeatru();
         else if(collection.equals(Tip.Cinema))
-            return new BiletVIPCinema(numeEveniment, data, capacitate, locatie);
+            return new BiletVIPCinema();
         else if(collection.equals(Tip.Concert))
-            return new BiletVIPConcert(numeEveniment, data, capacitate, locatie);
+            return new BiletVIPConcert();
 
         System.out.println("Not exist!");
         return null;

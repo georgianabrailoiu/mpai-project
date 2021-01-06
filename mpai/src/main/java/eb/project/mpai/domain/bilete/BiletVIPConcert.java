@@ -2,12 +2,17 @@ package eb.project.mpai.domain.bilete;
 
 import eb.project.mpai.domain.interfaces.Eveniment;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+@Entity
+@Table(name = "BVConcert")
 public class BiletVIPConcert implements Eveniment {
 
-    private Float id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String numeEveniment;
     private String data;
     private int capacitate;
@@ -19,11 +24,35 @@ public class BiletVIPConcert implements Eveniment {
         System.out.println("Eveniment: "+ numeEveniment +" in data de "+ data);
         System.out.println("Locatie: "+ locatie);
     }
+    public String getNumeEveniment() {
+        return numeEveniment;
+    }
 
-    public BiletVIPConcert(String numeEveniment, String data, int capacitate, String locatie) {
+    public void setNumeEveniment(String numeEveniment) {
         this.numeEveniment = numeEveniment;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
         this.data = data;
+    }
+
+    public int getCapacitate() {
+        return capacitate;
+    }
+
+    public void setCapacitate(int capacitate) {
         this.capacitate = capacitate;
+    }
+
+    public String getLocatie() {
+        return locatie;
+    }
+
+    public void setLocatie(String locatie) {
         this.locatie = locatie;
     }
 }
