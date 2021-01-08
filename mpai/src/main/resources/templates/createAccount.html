@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Form</h1>
-<form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+<form action="#" th:action="@{/createAccount}" th:object="${user}" method="post">
     <div class="u-form-group u-form-name">
         <label for="name-8f21" class="u-form-control-hidden u-label">Nume utilizator</label>
         <input type="text" placeholder="Introduceti numele" th:field="*{nume}" id="name-8f21" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="" autofocus="autofocus">
