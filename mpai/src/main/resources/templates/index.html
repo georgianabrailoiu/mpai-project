@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>EventClass</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}" />
+</head>
+<body>
+<div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
+    USER: <span sec:authentication="name"></span> |
+    USER TYPE: <span sec:authentication="principal.authorities"></span>
+    <div>
+        <form action="#" th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout" />
+        </form>
+    </div>
+</div>
+<h1>EventClass</h1>
+<p>Bine ati venit! Prin intermediul platformei noastre va puteti rezerva un loc la evenimentele visurilor dumneavoastra. </p>
+
+    <button> <a href="/user/index" th:href="@{/user/index}">LOG IN</a></button><button>
+    <a href="/user/index" th:href="@{/createAccount}">SIGN UP</a></button>
+
+
+</body>
+</html>
