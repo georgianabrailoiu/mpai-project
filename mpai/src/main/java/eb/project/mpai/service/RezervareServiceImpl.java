@@ -1,11 +1,8 @@
 package eb.project.mpai.service;
 
 import eb.project.mpai.domain.Rezervare;
-import eb.project.mpai.domain.Utilizator;
 import eb.project.mpai.repository.RezervareRepository;
-import eb.project.mpai.repository.UtilizatorRepository;
 import eb.project.mpai.service.interfaces.RezervareService;
-import eb.project.mpai.service.interfaces.UtilizatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +24,9 @@ public class RezervareServiceImpl implements RezervareService {
         return rezervareRepository.save(utilizator);
     }
 
+    @Override
+    public List<Rezervare> findAllByUserId(Long id) {
+        return rezervareRepository.findAllByUserId(id);
+    }
 
 }

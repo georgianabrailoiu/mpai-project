@@ -122,4 +122,19 @@ public class Rezervare {
     public void setVipConcert(BiletVIPConcert vipConcert) {
         this.vipConcert = vipConcert;
     }
+
+    @Override
+    public String toString() {
+        return "Rezervare{" +
+                "id=" + id +
+                ", loc=" + loc +
+                ", utilizator=" + utilizator +
+                ", bnCinema=" + bnCinema +
+                ", bnConcert=" + bnConcert +
+                ", bnTeatru=" + bnTeatru +
+                ", vipCinema=" + vipCinema +
+                ", vipTeatru=" + vipTeatru +
+                ", vipConcert=" + vipConcert +
+                '}';
+    }
 }

@@ -28,7 +28,7 @@ public class Utilizator implements State, Handler {
     private boolean isActive;
 
     @OneToMany(mappedBy="utilizator")
-    private Set<Rezervare> rezervareList;
+    private List<Rezervare> rezervareList;
     @Override
     public String toString() {
         return "Nume: " + nume + "\n" +
@@ -157,6 +157,14 @@ public class Utilizator implements State, Handler {
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    public List<Rezervare> getRezervareList() {
+        return rezervareList;
+    }
+
+    public void setRezervareList(List<Rezervare> rezervareList) {
+        this.rezervareList = rezervareList;
     }
 
     @Override

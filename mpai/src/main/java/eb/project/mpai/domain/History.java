@@ -2,54 +2,13 @@ package eb.project.mpai.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
-public class History extends AbstractHistory{
+public class History extends AbstractHistory {
 
-
-   public History(){
-
-   }
-
-    public History(List<String> continut){
-        this.continut=continut;
+    public History(List<Rezervare> rezervari) {
+        this.rezervari = rezervari;
     }
-    @Override
-    public boolean isNil() {
-        return false;
-    }
-
-    @Override
-    public List<String> getContinut() {
-
-
-       return continut;
-
-    }
-
-
-
-
-
-
-
-
-
-/*
-    String[] continut;
-
-    public History(){
-
-    }
-
-    public History(String[] continut){
-       this.continut=continut;
-    }
-
-    public void addContinut(String[] continut){
-        this.continut=continut;
-    }
-
-
 
     @Override
     public boolean isNil() {
@@ -57,9 +16,9 @@ public class History extends AbstractHistory{
     }
 
     @Override
-    public String[] getContinut() {
-        return this.continut;
+    public List<Rezervare> getContinut() {
+        return rezervari;
+
     }
 
- */
 }
