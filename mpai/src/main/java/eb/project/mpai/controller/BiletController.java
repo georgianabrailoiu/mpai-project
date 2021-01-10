@@ -140,7 +140,8 @@ public class BiletController {
     public String addEvent(@ModelAttribute Bilet b, Model model) {
         rezervare.setLoc(Integer.parseInt(b.getLoc()));
         rezervareService.addRezervare(rezervare);
-        eveniment.render();
+        String notify = eveniment.render();
+        model.addAttribute("notify", notify);
         Utilizator utilizator = utilizatorService.findById(Long.valueOf(1)).get();
 
         List<Rezervare> rezervari = rezervareService.findAll();

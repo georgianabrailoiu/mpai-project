@@ -7,7 +7,6 @@ import eb.project.mpai.domain.interfaces.Eveniment;
 import eb.project.mpai.domain.interfaces.Handler;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -26,7 +25,7 @@ public class BiletVIPConcert extends Observabil implements Eveniment {
     private List<Rezervare> rezervareList;
 
     @Override
-    public void render() {
+    public String render() {
         Handler utilizator1 = new Utilizator("Anca", "anca.bute@gmail.com");
         Handler utilizator2 = new Utilizator("Maria", "maria.pitis@gmail.com");
         Handler utilizator3 = new Utilizator("Gigi", "gigi.brailoiu@gmail.com");
@@ -40,6 +39,7 @@ public class BiletVIPConcert extends Observabil implements Eveniment {
         System.out.println("Bilet VIP: concert - "+ capacitate+" locuri");
         System.out.println("Eveniment: "+ numeEveniment +" in data de "+ data);
         System.out.println("Locatie: "+ locatie);
+        return "Administratorii au fost notificati";
     }
     public String getNumeEveniment() {
         return numeEveniment;

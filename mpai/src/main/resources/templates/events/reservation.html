@@ -7,7 +7,14 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body style="background: linear-gradient(0deg,#ff6a00 0,#ee0979 100%)">
+<script th:inline="javascript">
+/*<![CDATA[*/
 
+var message = [[${notify}]];
+alert(message);
+
+/*]]>*/
+</script>
 <h1>Rezervarile mele</h1>
 
 <div class="row">
@@ -36,5 +43,6 @@
         </table>
     </div>
 </div>
+
 </body>
 </html>
