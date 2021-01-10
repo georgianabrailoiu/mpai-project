@@ -1,9 +1,11 @@
 package eb.project.mpai.domain.bilete;
 
+import eb.project.mpai.domain.Rezervare;
 import eb.project.mpai.domain.interfaces.Eveniment;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "BVTeatru")
@@ -17,11 +19,13 @@ public class BiletVIPTeatru implements Eveniment {
     private int capacitate;
     private String locatie;
 
+
+    @OneToMany(mappedBy="vipTeatru")
+    private List<Rezervare> rezervareList;
+
     @Override
     public void render() {
         System.out.println("Bilet VIP: teatru - "+ capacitate+" locuri");
-        System.out.println("Eveniment: "+ numeEveniment +" in data de "+ data);
-        System.out.println("Locatie: "+ locatie);
     }
 
     public String getNumeEveniment() {
@@ -54,5 +58,21 @@ public class BiletVIPTeatru implements Eveniment {
 
     public void setLocatie(String locatie) {
         this.locatie = locatie;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Rezervare> getRezervareList() {
+        return rezervareList;
+    }
+
+    public void setRezervareList(List<Rezervare> rezervareList) {
+        this.rezervareList = rezervareList;
     }
 }

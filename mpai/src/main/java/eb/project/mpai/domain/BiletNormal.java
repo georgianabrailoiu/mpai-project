@@ -11,11 +11,9 @@ import java.util.Date;
 public class BiletNormal extends AbstractFactory {
 
     private Eveniment eveniment;
-    private float pret;
-    private int nrLoc;
 
     @Override
-    Eveniment getItem(Tip collection) {
+    public Eveniment getItem(Tip collection) {
         if(collection.equals(Tip.Teatru))
             return new BiletNormalTeatru();
         else if(collection.equals(Tip.Cinema))
@@ -27,8 +25,12 @@ public class BiletNormal extends AbstractFactory {
         return null;
     }
 
-    public BiletNormal(float pret, int nrLoc) {
-        this.pret = pret;
-        this.nrLoc = nrLoc;
+    public Eveniment getEveniment() {
+        return eveniment;
     }
+
+    public void setEveniment(Eveniment eveniment) {
+        this.eveniment = eveniment;
+    }
+
 }

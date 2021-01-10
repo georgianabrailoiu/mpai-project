@@ -5,6 +5,8 @@ package eb.project.mpai.domain;
 import eb.project.mpai.domain.interfaces.State;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "utilizatori")
@@ -24,7 +26,8 @@ public class Utilizator implements State  {
     /*  Mirela */
     private transient State stare;
 
-
+    @OneToMany(mappedBy="utilizator")
+    private Set<Rezervare> rezervareList;
 
 
     public String getNrTel() {
@@ -114,5 +117,11 @@ public class Utilizator implements State  {
         this.stare.doAction();
     }
 
-
+//    public Set<Rezervare> getRezervareList() {
+//        return rezervareList;
+//    }
+//
+//    public void setRezervareList(Set<Rezervare> rezervareList) {
+//        this.rezervareList = rezervareList;
+//    }
 }

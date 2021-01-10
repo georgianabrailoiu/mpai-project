@@ -1,5 +1,6 @@
 package eb.project.mpai.domain.bilete;
 
+import eb.project.mpai.domain.Rezervare;
 import eb.project.mpai.domain.interfaces.Eveniment;
 
 import javax.persistence.*;
@@ -18,13 +19,24 @@ public class BiletNormalCinema implements Eveniment {
     private int capacitate;
     private String locatie;
 
+    @OneToMany(mappedBy="bnCinema")
+    private List<Rezervare> rezervareList;
+
+    public BiletNormalCinema(){ }
 
     @Override
     public void render() {
-        System.out.println("Bilet normal: cinema - "+ capacitate+" locuri");
-        System.out.println("Eveniment: "+ numeEveniment +" in data de "+ data);
-        System.out.println("Locatie: "+ locatie);
+//        System.out.println("Bilet normal: cinema - "+ capacitate+" locuri");
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getNumeEveniment() {
         return numeEveniment;
     }
