@@ -3,24 +3,26 @@
 <head>
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
-<body>
+<body style="background: linear-gradient(0deg,#ff6a00 0,#ee0979 100%)">
 
 <h1>Rezervarile mele</h1>
 
 <div class="row">
-    <div class="table-responsive table-wrap">
-        <table class="table table-striped-v2" id="tableId">
+    <div style="background: white" class="table-responsive table-wrap">
+        <table style="background: white" class="table table-striped-v2" id="tableId">
             <thead>
             <tr>
-                <th>Denumire evenimentului</th>
+                <th>Denumirea evenimentului</th>
                 <th>Data evenimentului</th>
                 <th>Locatie</th>
                 <th>Loc</th>
                 <th>Tip bilet</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody style="background: white">
             <tr th:if="${reservations !=null}"
                 th:each="reservation : ${reservations}" id="body-row">
 

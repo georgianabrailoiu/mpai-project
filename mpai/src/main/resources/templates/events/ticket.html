@@ -5,38 +5,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Ticket Page</title>
+
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
-<body>
+<body style="background: linear-gradient(0deg,#ff6a00 0,#ee0979 100%)">
 
 
 <div class="marginContentStyle " style="text-align: center; width: 450px; background: white; border-radius: 5px; overflow: hidden; margin-top:250px  ">
     <form action="#" th:action="@{/user/events/list}" th:object="${ticket}" method="post" id="formId" style="padding: 50px">
         <div class="row" style="padding-left: 50px;padding-right: 50px">
-                <p style="    font-family: Raleway-Black; font-size: 20px;color: #333333;line-height: 1.2;text-transform: uppercase;text-align: center; width: 100%;display: block;" class="titlePage">Cautati eveniment:</p>
+            <p style="    font-family: Raleway-Black; font-size: 20px;color: #333333;line-height: 1.2;text-transform: uppercase;text-align: center; width: 100%;display: block;" class="titlePage">Cautati eveniment:</p>
         </div>
 
-                <div class="row" style="margin-bottom: 20px">
-                    <div >
-                            <select th:field="*{tipEveniment}">
-                                <option th:value="'Cinema'" th:text="Cinema"></option>
-                                <option th:value="'Concert'" th:text="Concert"></option>
-                                <option th:value="'Teatru'" th:text="Teatru"></option>
-                            </select>
-                    </div>
-                </div>
-                <div class="row" >
-                        <label style="text-align: left; padding-top: 5px; padding-bottom: 5px">Tipul biletului:</label>
-                            <select th:field="*{tipBilet}">
-                                <option th:value="'NORMAL'" th:text="Normal"></option>
-                                <option th:value="'VIP'" th:text="BIP"></option>
-                            </select>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 10px;">
-                        <input style="background: #252529;padding: 5px 10px 5px 10px;border-radius: 25px; border: none; color: white;margin-top: 10px" type="submit" value="Cauta" />
-                </div>
+        <div class="row" style="margin-bottom: 20px">
+            <div >
+                <select th:field="*{tipEveniment}">
+                    <option th:value="'Cinema'" th:text="Cinema"></option>
+                    <option th:value="'Concert'" th:text="Concert"></option>
+                    <option th:value="'Teatru'" th:text="Teatru"></option>
+                </select>
+            </div>
+        </div>
+        <div class="row" >
+            <label style="text-align: left; padding-top: 5px; padding-bottom: 5px">Tipul biletului:</label>
+            <select th:field="*{tipBilet}">
+                <option th:value="'NORMAL'" th:text="Normal"></option>
+                <option th:value="'VIP'" th:text="VIP"></option>
+            </select>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <input style="background: #252529;padding: 5px 10px 5px 10px;border-radius: 25px; border: none; color: white;margin-top: 10px" type="submit" value="Cauta" />
+        </div>
     </form>
 </div>
 
