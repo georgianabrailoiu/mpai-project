@@ -5,6 +5,34 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1>Verifica si tu acum baza de date ...la rezervare</h1>
+
+<h1>Rezervarile mele</h1>
+
+<div class="row">
+    <div class="table-responsive table-wrap">
+        <table class="table table-striped-v2" id="tableId">
+            <thead>
+            <tr>
+                <th>Denumire evenimentului</th>
+                <th>Data evenimentului</th>
+                <th>Locatie</th>
+                <th>Loc</th>
+                <th>Tip bilet</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${reservations !=null}"
+                th:each="reservation : ${reservations}" id="body-row">
+
+                <td  style="white-space: nowrap"  th:text="${reservation.numeEveniment}" ></td>
+                <td  style="white-space: nowrap"  th:text="${reservation.data}" ></td>
+                <td  style="white-space: nowrap"  th:text="${reservation.locatie}"></td>
+                <td  style="white-space: nowrap"  th:text="${reservation.loc}"></td>
+                <td  style="white-space: nowrap"  th:text="${reservation.tipBilet}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>
