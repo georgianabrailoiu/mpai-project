@@ -23,4 +23,9 @@ public class UtilizatorServiceImpl implements UtilizatorService {
     public Utilizator addUtilizator(Utilizator utilizator) {
         return utilizatorRepository.save(utilizator);
     }
+
+    @Override
+    public Utilizator findByEmail(String email) {
+        return utilizatorRepository.findByEmail(email);
+    }
 }

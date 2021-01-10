@@ -60,5 +60,12 @@
     </div>
 </div>
 <a href="/">Inapoi la prima pagina</a>
+<a href="/deactivateAccount">Dezactiveaza contul</a>
+<form ACTION="#" th:action="@{/deactivateAccount}" th:object="${user}" method="POST">
+    <input type="hidden" th:field="*{nume}"/>
+    <input type="hidden" th:field="*{email}"/>
+    <!-- ADD ALL THE OTHER FIELDS THAT ARE PART OF THE OBJECT -->
+    <button type="submit">Submit</button>
+</form>
 </body>
 </html>

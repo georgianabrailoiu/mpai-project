@@ -2,6 +2,7 @@ package eb.project.mpai.domain;
 
 import eb.project.mpai.domain.interfaces.Handler;
 import eb.project.mpai.domain.interfaces.State;
+
 import javax.persistence.*;
 
 @Entity
@@ -22,6 +23,7 @@ public class Utilizator implements State, Handler {
     private boolean isAdmin;
     /*  Mirela */
     private transient State stare;
+    private boolean isActive;
 
     @Override
     public String toString() {
@@ -141,9 +143,21 @@ public class Utilizator implements State, Handler {
         return stare;
     }
 
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
     @Override
-    public void doAction() {
-        this.stare.doAction();
+    public void doAction(Utilizator utilizator) {
+        this.stare.doAction(utilizator);
     }
 
     @Override

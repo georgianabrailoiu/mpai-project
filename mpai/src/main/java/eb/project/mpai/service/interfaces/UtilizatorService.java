@@ -9,4 +9,6 @@ public interface UtilizatorService {
     List<Utilizator> findAll();
 
     Utilizator addUtilizator(Utilizator utilizator);
+
+    Utilizator findByEmail(String email);
 }
