@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+
+  <title>EventClass</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/one-page-wonder.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/user/index" th:href="@{/createAccount}">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user/index" th:href="@{/user/index}">Log In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead text-center text-white">
+    <div class="masthead-content">
+      <div class="container">
+        <h1 class="masthead-heading mb-0">EventClass</h1>
+        <h2 class="masthead-subheading mb-0">Rezervati un loc la evenimentele visurilor dumneavoastra!</h2>
+      </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-5">
+            <img class="img-fluid rounded-circle" src="img/01.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h2 class="display-4">Concerte</h2>
+            <p>Prin intermediul platformei EventClass va aflati doar la un click distanta fata de cele mai tari concerte! Va oferim acces rapid la o gama variata de evenimente muzicale, atat in format clasic cat si electronic, printr-o rezervare pe acest site. Nu ratati sansa de a ajunge mai aproape de artistii preferati!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="p-5">
+            <img class="img-fluid rounded-circle" src="img/teatru3.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-5">
+            <h2 class="display-4">Teatru</h2>
+            <p>Mersul la teatru nu a fost niciodata mai simplu! EventClass va pune la dispozitie o gama larga de spectacole, incepand de la comedii sau drame si pana la spectacole de teatru pentru copii, prin crearea unui cont si rezervarea unui loc la evenimentul dorit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-5">
+            <img class="img-fluid rounded-circle" src="img/cinema.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h2 class="display-4">Cinema</h2>
+            <p>Descoperiti ultimele filme din cinematografe si faceti o rezervare online la orice locatie din tara! Evitati cozile lungi de la cinema pentru achizitionarea unui bilet si riscul de a intarzia la filmul mult asteptat prin intermediul unei rezervari.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
+    USER: <span sec:authentication="name"></span> |
+    USER TYPE: <span sec:authentication="principal.authorities"></span>
+    <div>
+      <form action="#" th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout" />
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-black">
+    <div class="container">
+      <p class="m-0 text-center text-white small">&copy; MPAI - EventClass 2021</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

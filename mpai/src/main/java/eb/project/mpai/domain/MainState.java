@@ -1,7 +1,5 @@
 package eb.project.mpai.domain;
 
-import javax.rmi.CORBA.Util;
-
 public class MainState {
     public static void main(String[] args) {
         Utilizator utilizator=new Utilizator();

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>EventClass</title>
+    <meta charset="utf-8" />
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+</head>
+<body>
+<div
+        id="intro-example"
+        class="p-5 text-center bg-image"
+        style="background-image: url('https://mdbootstrap.com/img/new/slides/041.jpg')">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7)">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+                <h1 class="mb-3">Learn Bootstrap 5 with MDB</h1>
+                <h5 class="mb-4">Best & free guide of responsive web design</h5>
+                <a
+                        class="btn btn-outline-light btn-lg m-2"
+                        href="https://www.youtube.com/watch?v=c9B4TPnak1A"
+                        role="button"
+                        rel="nofollow"
+                        target="_blank"
+                >Start tutorial</a>
+                <a
+                        class="btn btn-outline-light btn-lg m-2"
+                        href="https://mdbootstrap.com/docs/standard/"
+                        target="_blank"
+                        role="button"
+                >Download MDB UI KIT</a
+                >
+            </div>
+        </div>
+    </div>
+</div>
+<div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
+    USER: <span sec:authentication="name"></span> |
+    USER TYPE: <span sec:authentication="principal.authorities"></span>
+    <div>
+        <form action="#" th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout" />
+        </form>
+    </div>
+</div>
+<h1>Evenimente</h1>
+<p>Bine ati venit! Prin intermediul platformei noastre va puteti rezerva un loc la evenimentele visurilor dumneavoastra. </p>
+
+    <button> <a href="/user/index" th:href="@{/user/index}">LOG IN</a></button><button>
+    <a href="/user/index" th:href="@{/createAccount}">SIGN UP</a></button>
+
+
+</body>
+</html>

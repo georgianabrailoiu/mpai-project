@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"\>
+<head>
+	<title>Cont nou</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/page.css">
+</head>
+<body>
+
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+	<div class="wrapper wrapper--w790">
+		<div class="card card-5">
+			<div class="card-body">
+				<form action="#" th:action="@{/createAccount}" th:object="${user}" method="post">
+
+					<span class="login100-form-title p-b-55">
+						Creeaza un cont
+					</span>
+
+					<div class="u-form-group u-form-name">
+						<div class="wrap-input100 validate-input m-b-16">
+						<label for="name-8f21" class="u-form-control-hidden u-label">Nume utilizator</label>
+						<input type="text" placeholder="Introduceti numele" th:field="*{nume}"
+							   id="name-8f21" name="name" class="form-control input-lg" required="" autofocus="autofocus">
+						</div>
+					</div><!-- always visible -->
+					<div class="u-form-email u-form-group">
+						<div class="wrap-input100 validate-input m-b-16">
+						<label for="email-8f21" class="u-form-control-hidden u-label">Email</label>
+						<input type="email" placeholder="Introduceti o adresa de email valida" th:field="*{email}"
+							   id="email-8f21" name="email" class="form-control input-lg" required="">
+						</div>
+					</div>
+					<div class="u-form-group">
+						<div class="wrap-input100 validate-input m-b-16">
+						<label for="message-8f21" class="u-form-control-hidden u-label">Parola</label>
+						<input placeholder="Introduceti parola" th:field="*{parola}" rows="4" cols="50"
+							   id="message-8f21" name="message" class="form-control input-lg" required="required" type="text">
+						</div>
+						</div>
+					<div class="u-form-address u-form-group">
+						<div class="wrap-input100 validate-input m-b-16">
+						<label for="address-7ec1" class="u-form-control-hidden u-label">Adresa</label>
+						<input type="text" placeholder="Introduceti adresa" th:field="*{adresa}"
+							   id="address-7ec1" name="address" class="form-control input-lg" required="">
+						</div>
+						</div>
+					<div class="u-form-address u-form-group">
+						<div class="wrap-input100 validate-input m-b-16">
+						<label for="address-7ec1" class="u-form-control-hidden u-label">Cod postal</label>
+						<input type="text" placeholder="Introduceti codul postal" th:field="*{codPostal}"
+							   id="cod-postal" name="codPostal" class="form-control input-lg">
+						</div>
+					</div>
+					<div class="u-form-address u-form-group">
+						<div class="wrap-input100 validate-input m-b-16">
+						<label for="address-7ec1" class="u-form-control-hidden u-label">Varsta</label>
+						<input type="text" placeholder="Introduceti varsta" th:field="*{varsta}" pattern="[1-9]{2}"
+							   id="varsta" name="varsta" class="form-control input-lg">
+						</div>
+					</div>
+					<div class="u-form-address u-form-group">
+						<div class="wrap-input100 validate-input m-b-16">
+						<label for="address-7ec1" class="u-form-control-hidden u-label">Stare civila</label>
+						<input type="text" placeholder="Introduceti starea civila" th:field="*{stareCivila}"
+							   id="stare-civ" name="stare-civ" class="form-control input-lg">
+						</div>
+					</div>
+					<div class="u-form-phone u-form-group">
+						<div class="wrap-input100 validate-input m-b-16">
+						<label for="phone-42af" class="u-form-control-hidden u-label">Telefon</label>
+						<input type="text" th:field="*{nrTel}" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})"
+							   placeholder="Introduceti telefonul" id="phone-42af" name="phone" class="form-control input-lg" required="required">
+						</div>
+					</div>
+					<div class="btn-group btn-block">
+							<button class="btn mr-2 login100-form-btn" type="submit">Submit</button>
+							<button class="btn ml-2 login100-form-btn" type="reset">Reset</button>
+					</div>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="js/main.js"></script>
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
