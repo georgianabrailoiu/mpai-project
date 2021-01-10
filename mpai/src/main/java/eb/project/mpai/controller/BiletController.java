@@ -39,14 +39,14 @@ public class BiletController {
     private TipBilet tipBilet;
     Rezervare rezervare = new Rezervare();
 
-    @GetMapping("/events/ticket")
+    @GetMapping("/user/events/ticket")
     public String getTypeTicket(Model model) {
         Bilet ticket = new Bilet();
         model.addAttribute("ticket", ticket);
         return "events/ticket";
     }
 
-    @PostMapping("/events/list")
+    @PostMapping("/user/events/list")
     public String getAllTickets(@ModelAttribute Bilet bilet,Model model) {
 
         abstractFactory = TipBiletFactory.rezerva(TipBilet.valueOf(bilet.getTipBilet()));
@@ -82,7 +82,7 @@ public class BiletController {
         return "events/list";
     }
 
-    @GetMapping("/events/view/{id}")
+    @GetMapping("/user/events/view/{id}")
     public String addTicket(@PathVariable(value = "id") Long id, Model model) {
         if(tipBilet.equals(TipBilet.NORMAL)){
             switch (tipEveniment){
@@ -119,7 +119,7 @@ public class BiletController {
         return "events/view";
     }
 
-    @PostMapping("/newreservation")
+    @PostMapping("/user/newreservation")
     public String addEvent(@ModelAttribute Bilet bilet, Model model) {
         rezervare.setLoc(Integer.parseInt(bilet.getLoc()));
         rezervareService.addRezervare(rezervare);
