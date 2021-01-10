@@ -1,14 +1,12 @@
 package eb.project.mpai.domain;
 
-
-
+import eb.project.mpai.domain.interfaces.Handler;
 import eb.project.mpai.domain.interfaces.State;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "utilizatori")
-public class Utilizator implements State  {
+public class Utilizator implements State, Handler {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,6 +19,7 @@ public class Utilizator implements State  {
     private String codPostal;
     private Integer varsta;
     private String stareCivila;
+    private boolean isAdmin;
     /*  Mirela */
     private transient State stare;
 
@@ -50,6 +49,11 @@ public class Utilizator implements State  {
 
     public Utilizator(){
 
+    }
+
+    public Utilizator(String nume, String email){
+        this.nume = nume;
+        this.email = email;
     }
 
     public String getNrTel() {
@@ -124,6 +128,9 @@ public class Utilizator implements State  {
         this.parola = parola;
     }
 
+    public boolean getIsAdmin() { return isAdmin; }
+    public void setAdmin(boolean isAdmin){this.isAdmin = isAdmin; }
+
     /*  Mirela */
 
     public void setStare(State stare) {
@@ -137,6 +144,11 @@ public class Utilizator implements State  {
     @Override
     public void doAction() {
         this.stare.doAction();
+    }
+
+    @Override
+    public void render(String tipBilet) {
+        System.out.println("A fost cumparat un bilet la " + tipBilet + ". Notificare pentru utilizatorul: " + this.nume + ", email: " + this.email);
     }
 
     public static class BuilderUtilizator {

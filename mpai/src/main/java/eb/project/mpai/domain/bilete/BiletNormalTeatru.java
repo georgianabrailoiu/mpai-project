@@ -1,13 +1,16 @@
 package eb.project.mpai.domain.bilete;
 
+import eb.project.mpai.domain.Observabil;
+import eb.project.mpai.domain.Utilizator;
 import eb.project.mpai.domain.interfaces.Eveniment;
+import eb.project.mpai.domain.interfaces.Handler;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "BNTeatru")
-public class BiletNormalTeatru implements Eveniment {
+public class BiletNormalTeatru extends Observabil implements Eveniment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,6 +22,17 @@ public class BiletNormalTeatru implements Eveniment {
 
     @Override
     public void render() {
+        Handler utilizator1 = new Utilizator("Anca", "anca.bute@gmail.com");
+        Handler utilizator2 = new Utilizator("Maria", "maria.pitis@gmail.com");
+        Handler utilizator3 = new Utilizator("Gigi", "gigi.brailoiu@gmail.com");
+        Handler utilizator4 = new Utilizator("Mirela", "mirela.bordeeanu@gmail.com");
+
+        this.addUtilizatori(utilizator1);
+        this.addUtilizatori(utilizator2);
+        this.addUtilizatori(utilizator3);
+        this.addUtilizatori(utilizator4);
+
+        this.notifyObservers("teatru");
         System.out.println("Bilet normal: teatru - "+ capacitate+" locuri");
         System.out.println("Eveniment: "+ numeEveniment +" in data de "+ data);
         System.out.println("Locatie: "+ locatie);
