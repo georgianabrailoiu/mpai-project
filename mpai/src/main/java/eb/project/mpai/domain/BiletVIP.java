@@ -8,12 +8,18 @@ import java.util.Date;
 
 public class BiletVIP extends AbstractFactory {
 
-    private Eveniment eveniment;
-    private float pret;
-    private int nrLoc;
+//    private Eveniment eveniment;
+//
+//    public Eveniment getEveniment() {
+//        return eveniment;
+//    }
+//
+//    public void setEveniment(Eveniment eveniment) {
+//        this.eveniment = eveniment;
+//    }
 
     @Override
-    Eveniment getItem(Tip collection) {
+    public Eveniment getItem(Tip collection) {
         if(collection.equals(Tip.Teatru))
             return new BiletVIPTeatru();
         else if(collection.equals(Tip.Cinema))
@@ -23,11 +29,5 @@ public class BiletVIP extends AbstractFactory {
 
         System.out.println("Not exist!");
         return null;
-    }
-
-    public BiletVIP(float pret, int nrLoc) {
-        this.pret = pret;
-        this.nrLoc = nrLoc;
-
     }
 }

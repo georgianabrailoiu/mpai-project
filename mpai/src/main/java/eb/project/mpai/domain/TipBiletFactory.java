@@ -4,10 +4,11 @@ import eb.project.mpai.domain.enums.Tip;
 import eb.project.mpai.domain.enums.TipBilet;
 
 public class TipBiletFactory {
-    public static AbstractFactory rezerva(TipBilet tipBilet, float pret, int nrLoc){
+
+    public static AbstractFactory rezerva(TipBilet tipBilet){
         if(tipBilet == TipBilet.NORMAL){
-            return new BiletNormal( pret,  nrLoc);
+            return new BiletNormal();
         }
-        else return new BiletVIP(pret,  nrLoc);
+        else return new BiletVIP();
     }
 }

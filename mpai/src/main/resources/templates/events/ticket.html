@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<div class="marginContentStyle " style="text-align: center">
+    <form action="#" th:action="@{/events/list}" th:object="${ticket}" method="post" id="formId">
+        <div class="row">
+            <div class="col-md-3" style="text-align: center">
+                <p class="titlePage">Selectati tipul evenimentului dorit:</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row" style="margin-top: 10px;">
+
+                    <div class="col-md-8">
+                        <label>Evenimentul cautat:</label>
+                            <select th:field="*{tipEveniment}">
+                                <option th:value="'Cinema'" th:text="Cinema"></option>
+                                <option th:value="'Concert'" th:text="Concert"></option>
+                                <option th:value="'Teatru'" th:text="Teatru"></option>
+                            </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-8">
+                        <label>Tipul biletului:</label>
+                            <select th:field="*{tipBilet}">
+                                <option th:value="'NORMAL'" th:text="Normal"></option>
+                                <option th:value="'VIP'" th:text="BIP"></option>
+                            </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-8">
+                        <input type="submit" value="Submit" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

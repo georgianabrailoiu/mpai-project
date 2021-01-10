@@ -4,6 +4,8 @@ import eb.project.mpai.domain.interfaces.Handler;
 import eb.project.mpai.domain.interfaces.State;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "utilizatori")
@@ -25,6 +27,8 @@ public class Utilizator implements State, Handler {
     private transient State stare;
     private boolean isActive;
 
+    @OneToMany(mappedBy="utilizator")
+    private Set<Rezervare> rezervareList;
     @Override
     public String toString() {
         return "Nume: " + nume + "\n" +

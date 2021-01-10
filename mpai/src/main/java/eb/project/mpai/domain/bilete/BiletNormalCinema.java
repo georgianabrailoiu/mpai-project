@@ -1,5 +1,6 @@
 package eb.project.mpai.domain.bilete;
 
+import eb.project.mpai.domain.Rezervare;
 import eb.project.mpai.domain.Observabil;
 import eb.project.mpai.domain.Utilizator;
 import eb.project.mpai.domain.interfaces.Eveniment;
@@ -21,6 +22,10 @@ public class BiletNormalCinema extends Observabil implements Eveniment {
     private int capacitate;
     private String locatie;
 
+    @OneToMany(mappedBy="bnCinema")
+    private List<Rezervare> rezervareList;
+
+    public BiletNormalCinema(){ }
 
     @Override
     public void render() {
@@ -39,6 +44,15 @@ public class BiletNormalCinema extends Observabil implements Eveniment {
         System.out.println("Eveniment: "+ numeEveniment +" in data de "+ data);
         System.out.println("Locatie: "+ locatie);
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getNumeEveniment() {
         return numeEveniment;
     }

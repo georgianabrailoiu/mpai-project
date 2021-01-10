@@ -6,5 +6,5 @@ import eb.project.mpai.domain.interfaces.Eveniment;
 import java.util.Date;
 
 public abstract class AbstractFactory {
-    abstract Eveniment getItem(Tip collection);
+    public abstract Eveniment getItem(Tip collection);
 }

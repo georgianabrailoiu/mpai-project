@@ -1,5 +1,6 @@
 package eb.project.mpai.domain.bilete;
 
+import eb.project.mpai.domain.Rezervare;
 import eb.project.mpai.domain.Observabil;
 import eb.project.mpai.domain.Utilizator;
 import eb.project.mpai.domain.interfaces.Eveniment;
@@ -7,6 +8,7 @@ import eb.project.mpai.domain.interfaces.Handler;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "BNConcert")
@@ -19,6 +21,9 @@ public class BiletNormalConcert extends Observabil implements Eveniment {
     private String data;
     private int capacitate;
     private String locatie;
+
+    @OneToMany(mappedBy="bnConcert")
+    private List<Rezervare> rezervareList;
 
     @Override
     public void render() {
@@ -59,5 +64,21 @@ public class BiletNormalConcert extends Observabil implements Eveniment {
 
     public void setLocatie(String locatie) {
         this.locatie = locatie;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Rezervare> getRezervareList() {
+        return rezervareList;
+    }
+
+    public void setRezervareList(List<Rezervare> rezervareList) {
+        this.rezervareList = rezervareList;
     }
 }
