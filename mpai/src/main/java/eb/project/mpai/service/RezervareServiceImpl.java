@@ -33,5 +33,8 @@ public class RezervareServiceImpl implements RezervareService {
         return rezervareRepository.findById(id);
     }
 
-
+   @Override
+    public List<Rezervare> findAllByUserId(Long id) {
+        return rezervareRepository.findAllByUserId(id);
+    }
 }

@@ -12,5 +12,7 @@ public interface RezervareService {
 
     Rezervare addRezervare(Rezervare rezervare);
 
+    List<Rezervare> findAllByUserId(Long id);
+
     Optional<Rezervare> findById(Long id);
 }

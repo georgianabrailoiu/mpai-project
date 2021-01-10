@@ -4,18 +4,28 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Lista Evenimentelor</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="src/main/webapp/resources/static/css/custom.css">
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script
+            src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/page.css">
+
 </head>
 <body>
-<h1>Result</h1>
-<div class="row">
-    <div class="table-responsive table-wrap">
-        <table class="table table-striped-v2" id="tableId">
+<div class="containerEvenimente bg-gra-03">
+    <div class="col-sm-11">
+        <h3>Evenimente</h3>
+        <table class="table" align=center>
             <thead>
             <tr>
-                <th>Actions</th>
-                <th>Denumire evenimentului</th>
+                <th>Actiuni</th>
+                <th>Denumirea evenimentului</th>
                 <th>Data evenimentului</th>
                 <th>Locatie</th>
                 <th>Capacitate</th>
@@ -28,9 +38,9 @@
                     <div class="dropdown">
                         <span class="glyphicon glyphicon-option-horizontal"></span>
                         <div>
-                            <p><a th:href="@{/events/view/{id}(id=${event.id})}" target="_blank"><i class="glyphicon glyphicon-eye-open"></i> View</a></p>
-<!--                            <p><a th:href="@{/candidates/{id}(id=${event.id})}" target="_blank"><i class="glyphicon glyphicon-pencil"></i> Edit</a></p>-->
-<!--                            <p><a th:href="@{/candidates/delete/{id}(id=${event.id})}" target="_blank"><i class="glyphicon glyphicon-trash"></i> Delete</a></p>-->
+                            <p><a th:href="@{/user/events/view/{id}(id=${event.id})}" target="_blank"><i class="glyphicon glyphicon-eye-open"></i> View</a></p>
+                            <!--                            <p><a th:href="@{/candidates/{id}(id=${event.id})}" target="_blank"><i class="glyphicon glyphicon-pencil"></i> Edit</a></p>-->
+                            <!--                            <p><a th:href="@{/candidates/delete/{id}(id=${event.id})}" target="_blank"><i class="glyphicon glyphicon-trash"></i> Delete</a></p>-->
                         </div>
                     </div>
                 </td>
@@ -42,7 +52,8 @@
             </tbody>
         </table>
     </div>
-</div>
+    <br />
 
+</div>
 </body>
 </html>

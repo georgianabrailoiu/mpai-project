@@ -84,4 +84,16 @@ public class BiletNormalCinema extends Observabil implements Eveniment {
     public void setLocatie(String locatie) {
         this.locatie = locatie;
     }
+
+    @Override
+    public String toString() {
+        return "BiletNormalCinema{" +
+                "id=" + id +
+                ", numeEveniment='" + numeEveniment + '\'' +
+                ", data='" + data + '\'' +
+                ", capacitate=" + capacitate +
+                ", locatie='" + locatie + '\'' +
+                ", rezervareList=" + rezervareList +
+                '}';
+    }
 }

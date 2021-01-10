@@ -1,10 +1,13 @@
 package eb.project.mpai.domain;
 
 import java.util.List;
+import java.util.Set;
 
-public  abstract  class AbstractHistory {
-    protected List<String> continut; /// in loc de continut pune Rezervari
+public abstract class AbstractHistory {
+    protected List<Rezervare> rezervari;
+
     public abstract boolean isNil();
-    public abstract List<String> getContinut();
+
+    public abstract List<Rezervare> getContinut();
 
 }

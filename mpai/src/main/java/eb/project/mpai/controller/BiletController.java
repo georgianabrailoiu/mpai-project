@@ -44,14 +44,14 @@ public class BiletController {
     private TipBilet tipBilet;
     Rezervare rezervare = new Rezervare();
 
-    @GetMapping("/events/ticket")
+    @GetMapping("/user/events/ticket")
     public String getTypeTicket(Model model) {
         Bilet ticket = new Bilet();
         model.addAttribute("ticket", ticket);
         return "events/ticket";
     }
 
-    @PostMapping("/events/list")
+    @PostMapping("/user/events/list")
     public String getAllTickets(@ModelAttribute Bilet bilet,Model model) {
 
         abstractFactory = TipBiletFactory.rezerva(TipBilet.valueOf(bilet.getTipBilet()));
@@ -87,7 +87,7 @@ public class BiletController {
         return "events/list";
     }
 
-    @GetMapping("/events/view/{id}")
+    @GetMapping("/user/events/view/{id}")
     public String addTicket(@PathVariable(value = "id") Long id, Model model) {
         if(tipBilet.equals(TipBilet.NORMAL)){
             switch (tipEveniment){
@@ -126,15 +126,17 @@ public class BiletController {
                     break;
             }
         }
+        BiletNormalCinema biletNormalCinema = biletNormalCinemaService.findById(id).get();
         Utilizator utilizator = utilizatorService.findById(Long.valueOf(1)).get();
         rezervare.setUtilizator(utilizator);
+        model.addAttribute("event", biletNormalCinema);
 
         Bilet inregistrareDateFinaleRezervare = new Bilet();
         model.addAttribute("finalData", inregistrareDateFinaleRezervare);
         return "events/view";
     }
 
-    @PostMapping("/newreservation")
+    @PostMapping("/user/newreservation")
     public String addEvent(@ModelAttribute Bilet b, Model model) {
         rezervare.setLoc(Integer.parseInt(b.getLoc()));
         rezervareService.addRezervare(rezervare);
